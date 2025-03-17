@@ -10,7 +10,7 @@ export default function Card() {
       >
         <div className="h-full"></div>
         <div className="h-full flex flex-col justify-start text-left px-10 md:px-20 lg:px-40">
-          <p className="text-6xl md:text-7xl lg:text-9xl font-['Montserrat'] mb-4">
+          <p className="text-6xl md:text-7xl lg:text-9xl font-bold font-['Montserrat'] mb-4">
             Roe Dizon
           </p>
           <TypeAnimation
@@ -21,6 +21,8 @@ export default function Card() {
               "College Student (2nd year)",
               3000,
               "Backend Developer",
+              3000,
+              "Database Management",
               3000,
             ]}
             wrapper="span"
