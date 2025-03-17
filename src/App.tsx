@@ -1,7 +1,12 @@
 import "./App.css";
+import Layout from "./components/Layout.tsx";
 
 function App() {
-  return <p className="text-white">hello world</p>;
+  return (
+    <>
+      <Layout />
+    </>
+  );
 }
 
 export default App;

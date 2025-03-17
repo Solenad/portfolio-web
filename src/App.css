@@ -1,8 +1,13 @@
 :root {
   --background-color: #1d1d1d;
+  --card-color1: #4b4b4b;
+  --card-color2: #292929;
+  --text-color: #ffffff;
 }
 
 body {
   font-family: "JetBrains Mono", monospace;
   background-color: var(--background-color);
+  min-height: 100vh;
+  color: var(--text-color);
 }
