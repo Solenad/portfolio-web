@@ -1,4 +1,5 @@
-@import "tailwindcss";
 @import "@fontsource/jetbrains-mono";
+@import "@fontsource/montserrat";
+@import "tailwindcss";
 
 @plugin "tailwindcss-animate";
