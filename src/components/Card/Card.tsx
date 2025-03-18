@@ -42,8 +42,8 @@ export default function Card() {
           <div className="h-full"></div>
           <div
             className={`h-full z-0 flex flex-col justify-center text-left px-10 md:px-20 lg:px-40 transition-transform duration-300 ease-in-out
-            fixed inset-0 items-center 
-            lg:justify-start lg:relative ${sidebarOpen ? "lg:translate-x-0" : "lg:-translate-x-[20%]"}`}
+            fixed inset-0 items-center
+            lg:justify-start lg:relative lg:items-start ${sidebarOpen ? "lg:translate-x-0" : "lg:-translate-x-[20%]"}`}
           >
             <p className="text-6xl md:text-7xl lg:text-9xl font-bold font-['Montserrat'] mb-4">
               Roe Dizon
