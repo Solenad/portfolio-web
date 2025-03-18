@@ -27,7 +27,10 @@ export default function Card() {
             <Hamburger style={"ml-5 mt-5 "} handleOpen={handleOpen} />
           </div>*/}
 
-          <Hamburger style={"fixed z-50 ml-5 mt-5 "} handleOpen={handleOpen} />
+          <Hamburger
+            style={"absolute z-50 ml-5 mt-5 "}
+            handleOpen={handleOpen}
+          />
 
           <div
             className={`absolute h-full min-w-full z-30 transition-transform duration-300 ease-in-out ${sidebarOpen ? "translate-x-0" : "-translate-x-full"}`}
@@ -41,7 +44,7 @@ export default function Card() {
           <div className="h-full"></div>
           <div
             className={`h-full z-0 flex flex-col justify-center text-left px-10 md:px-20 lg:px-40 transition-transform duration-300 ease-in-out
-            fixed inset-0 items-center text-nowrap
+            absolute inset-0 items-center text-nowrap
             lg:justify-start lg:relative lg:items-start ${sidebarOpen ? "lg:translate-x-0" : "lg:-translate-x-[20%]"}`}
           >
             <motion.p
