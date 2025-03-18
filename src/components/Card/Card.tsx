@@ -19,6 +19,7 @@ export default function Card() {
         flex flex-row
         w-[90%] h-[85vh] bg-gradient-to-b from-[var(--card-color1)] to-[var(--card-color2)]"
       >
+        {/* sidebar panel */}
         <div className="left-side min-w-[225px] relative">
           {/* dynamic button
           <div
@@ -30,16 +31,19 @@ export default function Card() {
           <Hamburger style={"fixed z-50 ml-5 mt-5 "} handleOpen={handleOpen} />
 
           <div
-            className={`h-full transition-transform duration-300 ease-in-out ${sidebarOpen ? "translate-x-0" : "-translate-x-full"}`}
+            className={`absolute h-full min-w-full z-30 transition-transform duration-300 ease-in-out ${sidebarOpen ? "translate-x-0" : "-translate-x-full"}`}
           >
             <Sidebar style={"block"} />
           </div>
         </div>
+
+        {/* title texts */}
         <div className="flex flex-col">
           <div className="h-full"></div>
           <div
-            className={`h-full flex flex-col justify-start text-left px-10 md:px-20 lg:px-40 transition-transform duration-300 ease-in-out
-${sidebarOpen ? "translate-x-0" : "-translate-x-[20%]"}`}
+            className={`h-full z-0 flex flex-col justify-center text-left px-10 md:px-20 lg:px-40 transition-transform duration-300 ease-in-out
+            fixed inset-0 items-center 
+            lg:justify-start lg:relative ${sidebarOpen ? "lg:translate-x-0" : "lg:-translate-x-[20%]"}`}
           >
             <p className="text-6xl md:text-7xl lg:text-9xl font-bold font-['Montserrat'] mb-4">
               Roe Dizon
