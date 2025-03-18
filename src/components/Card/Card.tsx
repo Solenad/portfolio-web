@@ -60,7 +60,7 @@ export default function Card() {
               sequence={[
                 "Software Developer",
                 3000,
-                "College Student (2nd year)",
+                "College Student (Year 2)",
                 3000,
                 "Backend Developer",
                 3000,
