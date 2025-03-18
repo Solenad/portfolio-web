@@ -4,6 +4,7 @@
   --card-color2: #292929;
   --text-color: #ffffff;
   --text-hover: #a4a4a4;
+  --sidebar: #101010;
 }
 
 body {
@@ -11,4 +12,8 @@ body {
   background-color: var(--background-color);
   min-height: 100vh;
   color: var(--text-color);
+}
+
+button {
+  cursor: pointer;
 }
