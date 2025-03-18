@@ -48,7 +48,7 @@ export default function Card() {
             lg:justify-start lg:relative lg:items-start ${sidebarOpen ? "lg:translate-x-0" : "lg:-translate-x-[20%]"}`}
           >
             <motion.p
-              className="text-6xl md:text-7xl lg:text-9xl font-bold font-['Montserrat'] mb-4"
+              className="text-5xl md:text-7xl lg:text-9xl font-bold font-['Montserrat'] mb-4"
               initial={{ opacity: 0, y: -50 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 1, ease: "easeOut" }}
