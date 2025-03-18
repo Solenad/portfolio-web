@@ -5,6 +5,7 @@ import Hamburger from "./Hamburger.tsx";
 import Sidebar from "../Sidebar/Sidebar.tsx";
 
 export default function Card() {
+  const [focus, setFocus] = useState(0);
   const [sidebarOpen, setSidebarOpen] = useState(false);
 
   const handleOpen = function () {
@@ -35,12 +36,12 @@ export default function Card() {
           <div
             className={`absolute h-full min-w-full z-30 transition-transform duration-300 ease-in-out ${sidebarOpen ? "translate-x-0" : "-translate-x-full"}`}
           >
-            <Sidebar style={"block"} />
+            <Sidebar style={"block"} focus={focus} setFocus={setFocus} />
           </div>
         </div>
 
         {/* title texts */}
-        <div className="flex flex-col">
+        <div className="flex flex-col" onClick={() => setSidebarOpen(false)}>
           <div className="h-full"></div>
           <div
             className={`h-full z-0 flex flex-col justify-center text-left px-10 md:px-20 lg:px-40 transition-transform duration-300 ease-in-out

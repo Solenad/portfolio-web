@@ -4,11 +4,11 @@ import { motion } from "framer-motion";
 
 interface props {
   style?: string;
+  focus: number;
+  setFocus: (index: number) => void;
 }
 
-export default function Sidebar({ style }: props) {
-  const [focus, setFocus] = useState(0);
-
+export default function Sidebar({ style, focus, setFocus }: props) {
   const icon = [
     { icon: "bx-home", label: "Home" },
     { icon: "bx-user", label: "About" },
