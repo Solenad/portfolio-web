@@ -1,5 +1,6 @@
 import { TypeAnimation } from "react-type-animation";
 import { useState } from "react";
+import { motion } from "framer-motion";
 import Hamburger from "./Hamburger.tsx";
 import Sidebar from "../Sidebar/Sidebar.tsx";
 
@@ -43,9 +44,14 @@ export default function Card() {
             fixed inset-0 items-center text-nowrap
             lg:justify-start lg:relative lg:items-start ${sidebarOpen ? "lg:translate-x-0" : "lg:-translate-x-[20%]"}`}
           >
-            <p className="text-6xl md:text-7xl lg:text-9xl font-bold font-['Montserrat'] mb-4">
+            <motion.p
+              className="text-6xl md:text-7xl lg:text-9xl font-bold font-['Montserrat'] mb-4"
+              initial={{ opacity: 0, y: -50 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 1, ease: "easeOut" }}
+            >
               Roe Dizon
-            </p>
+            </motion.p>
             <TypeAnimation
               className="ml-[0.3em] lg:ml-3 text-lg sm:text-xl md:text-2xl lg:text-3xl"
               sequence={[
