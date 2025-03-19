@@ -50,7 +50,7 @@ export default function Card() {
             style={`transition-transform duration-1000 ease-in-out ${focus != 0 ? "-translate-y-[800px]" : "translate-y-0"}`}
           />
           <About
-            style={`transition-transform duration-1000 ease-in-out translate-y-[${(1 - focus) * 800}px]`}
+            style={`transition-transform duration-1000 ease-in-out ${focus == 1 ? "translate-y-0" : ""} ${focus > 1 ? "-translate-y-[600px]" : ""} ${focus < 1 ? "translate-y-[600px]" : ""}`}
           />
         </div>
       </div>
