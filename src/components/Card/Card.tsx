@@ -16,11 +16,11 @@ export default function Card() {
     <>
       <div
         className="rounded-xl  shadow-xl overflow-hidden 
-        flex flex-row 
+        flex flex-row absolute lg:relative
         w-[90%] h-[85vh] bg-gradient-to-b from-[var(--card-color1)] to-[var(--card-color2)]"
       >
         {/* sidebar panel */}
-        <div className="left-side min-w-[225px] relative">
+        <div className="left-side min-w-[225px] absolute overflow-hidden lg:relative h-full">
           {/* dynamic button
           <div
             className={`fixed top-15 left-20 z-50 transition-transform duration 300 ease-in-out ${sidebarOpen ? "translate-x-full" : "translate-x-0"}`}
@@ -42,7 +42,7 @@ export default function Card() {
 
         {/* title texts */}
         <div
-          className="flex flex-col justify-center lg:justify-center items-center"
+          className="flex flex-col justify-center items-center lg:items-start w-full lg:w-[70%]"
           onClick={() => setSidebarOpen(false)}
         >
           <Title

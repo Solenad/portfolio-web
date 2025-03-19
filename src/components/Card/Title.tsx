@@ -11,7 +11,7 @@ export default function Title({ sidebarOpen, style }: props) {
     <div className={`${style} h-full w-full flex justify-center`}>
       <div
         className={`h-full z-0 flex flex-col justify-center text-left px-10 md:px-20 lg:px-40 transition-transform duration-500 ease-in-out 
-            absolute inset-0 items-center text-nowrap
+            absolute inset-0 items-center text-nowrap md:items-start
              lg:mt-30 lg:relative lg:items-start ${sidebarOpen ? "lg:translate-x-0" : "lg:-translate-x-[20%]"}`}
       >
         <motion.p
