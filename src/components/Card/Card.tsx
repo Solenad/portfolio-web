@@ -2,6 +2,7 @@ import { useState } from "react";
 import Hamburger from "./Hamburger.tsx";
 import Sidebar from "../Sidebar/Sidebar.tsx";
 import Title from "./Title.tsx";
+import About from "./About.tsx";
 
 export default function Card() {
   const [focus, setFocus] = useState(0);
@@ -15,7 +16,7 @@ export default function Card() {
     <>
       <div
         className="rounded-xl  shadow-xl overflow-hidden 
-        flex flex-row
+        flex flex-row 
         w-[90%] h-[85vh] bg-gradient-to-b from-[var(--card-color1)] to-[var(--card-color2)]"
       >
         {/* sidebar panel */}
@@ -33,15 +34,24 @@ export default function Card() {
           />
 
           <div
-            className={`absolute h-full min-w-full z-30 transition-transform duration-300 ease-in-out ${sidebarOpen ? "translate-x-0" : "-translate-x-full"}`}
+            className={`absolute h-full min-w-full z-30 transition-transform duration-500 ease-in-out ${sidebarOpen ? "translate-x-0" : "-translate-x-full"}`}
           >
             <Sidebar style={"block"} focus={focus} setFocus={setFocus} />
           </div>
         </div>
 
         {/* title texts */}
-        <div className="flex flex-col" onClick={() => setSidebarOpen(false)}>
-          <Title sidebarOpen={sidebarOpen} />
+        <div
+          className="flex flex-col justify-center lg:justify-center items-center"
+          onClick={() => setSidebarOpen(false)}
+        >
+          <Title
+            sidebarOpen={sidebarOpen}
+            style={`transition-transform duration-1000 ease-in-out ${focus != 0 ? "-translate-y-[800px]" : "translate-y-0"}`}
+          />
+          <About
+            style={`transition-transform duration-1000 ease-in-out translate-y-[${(1 - focus) * 800}px]`}
+          />
         </div>
       </div>
     </>

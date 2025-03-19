@@ -2,16 +2,17 @@ import { motion } from "framer-motion";
 import { TypeAnimation } from "react-type-animation";
 
 interface props {
+  style: string;
   sidebarOpen: boolean;
 }
 
-export default function Title({ sidebarOpen }: props) {
+export default function Title({ sidebarOpen, style }: props) {
   return (
-    <>
-      <div className="h-full"></div>
+    <div className={`${style} h-full w-full flex justify-center`}>
       <div
-        className={`h-full z-0 flex flex-col justify-center text-left px-10 md:px-20 lg:px-40 transition-transform duration-300 ease-in-out absolute inset-0 items-center text-nowrap
-            lg:justify-start lg:relative lg:items-start ${sidebarOpen ? "lg:translate-x-0" : "lg:-translate-x-[20%]"}`}
+        className={`h-full z-0 flex flex-col justify-center text-left px-10 md:px-20 lg:px-40 transition-transform duration-500 ease-in-out 
+            absolute inset-0 items-center text-nowrap
+             lg:mt-30 lg:relative lg:items-start ${sidebarOpen ? "lg:translate-x-0" : "lg:-translate-x-[20%]"}`}
       >
         <motion.p
           className="text-5xl md:text-7xl lg:text-9xl font-bold font-['Montserrat'] mb-4"
@@ -42,6 +43,6 @@ export default function Title({ sidebarOpen }: props) {
           repeat={Infinity}
         />
       </div>
-    </>
+    </div>
   );
 }
