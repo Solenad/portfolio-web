@@ -1,5 +1,4 @@
 import "boxicons/css/boxicons.min.css";
-import { useState } from "react";
 import { motion } from "framer-motion";
 
 interface props {
