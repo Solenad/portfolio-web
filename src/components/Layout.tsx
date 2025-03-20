@@ -24,7 +24,7 @@ export default function Card() {
     } else {
       document.documentElement.classList.remove("dark");
     }
-  }, []);
+  }, [darkMode]);
 
   const toggleDisplay = function () {
     setDarkMode(function (prev) {
