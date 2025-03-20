@@ -11,30 +11,30 @@ export default function Card() {
   const [darkMode, setDarkMode] = useState<boolean | null>(null);
 
   useEffect(function () {
-    let saved_mode = localStorage.getItem("display");
+    let saved_mode = localStorage.getItem("display") || "dark";
     if (!saved_mode) {
       saved_mode = "dark";
       localStorage.setItem("display", saved_mode);
     }
 
-    setDarkMode(saved_mode === "dark" ? true : false);
+    setDarkMode(saved_mode === "dark" ? false : true);
 
     if (saved_mode === "dark") {
-      document.documentElement.classList.add("dark");
-    } else {
       document.documentElement.classList.remove("dark");
+    } else {
+      document.documentElement.classList.add("dark");
     }
   }, []);
 
   const toggleDisplay = function () {
     setDarkMode(function (prev) {
       const new_mode = !prev;
-      localStorage.setItem("display", new_mode ? "dark" : "light");
+      localStorage.setItem("display", new_mode ? "light" : "dark");
 
       if (new_mode) {
-        document.documentElement.classList.add("dark");
-      } else {
         document.documentElement.classList.remove("dark");
+      } else {
+        document.documentElement.classList.add("dark");
       }
 
       return new_mode;
