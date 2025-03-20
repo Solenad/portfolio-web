@@ -47,11 +47,11 @@ export default function Card() {
         >
           <Title
             sidebarOpen={sidebarOpen}
-            style={`transition-transform duration-1000 ease-in-out ${focus != 0 ? "-translate-y-[800px]" : "translate-y-[150px]"}`}
+            style={`transition-transform duration-1000 ease-in-out ${focus != 0 ? "-translate-y-[80vh]" : "translate-y-[150px]"}`}
           />
           <About
             sidebarOpen={sidebarOpen}
-            style={`transition-transform duration-1000 ease-in-out ${focus == 1 ? "-translate-y-[275px]" : ""} ${focus > 1 ? "-translate-y-[600px]" : ""} ${focus < 1 ? "translate-y-[600px]" : ""}`}
+            style={`transition-transform duration-1000 ease-in-out ${focus == 1 ? "-translate-y-[30vh]" : ""} ${focus > 1 ? "-translate-y-[80vh]" : ""} ${focus < 1 ? "translate-y-[80vh]" : ""}`}
           />
         </div>
       </div>
