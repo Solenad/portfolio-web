@@ -2,7 +2,7 @@ import { useState } from "react";
 import Hamburger from "./Hamburger.tsx";
 import Sidebar from "../Sidebar/Sidebar.tsx";
 import Title from "./Title.tsx";
-import About from "./About.tsx";
+import About from "./About/About.tsx";
 
 export default function Card() {
   const [focus, setFocus] = useState(0);
