@@ -9,8 +9,9 @@ export default function Info() {
       </h1>
       <p className="w-full text-xs lg:text-lg lg:w-full mb-2 lg:mb-0 text-center md:text-justify lg:text-justify">
         An enthusiastic computer science undergraduate with a passion for
-        project-management and web development. I am continuously sharpening my
-        skills as a developer whilst handling short and long term projects.
+        project-management and web development. Together with my organization
+        colleagues, I continuously refine my skills through various partnership
+        and personal projects, as well as competing in hackathons.
       </p>
     </>
   );

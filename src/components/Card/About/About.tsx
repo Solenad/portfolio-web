@@ -66,7 +66,7 @@ export default function About({ style, sidebarOpen }: props) {
                 content={
                   <i
                     className={`bx bx-chevron-left text-xl lg:text-4xl text-center transition duration-200
-                                ${current == 0 ? "text-[var(--text-hover)]" : ""}`}
+                                ${current == 0 ? "text-[var(--text-dhover)]" : ""}`}
                   />
                 }
                 style={`${current == 0 ? "pointer-events-none" : ""}`}
@@ -85,7 +85,7 @@ export default function About({ style, sidebarOpen }: props) {
                 content={
                   <i
                     className={`bx bx-chevron-right text-xl lg:text-4xl text-center transition duration-200
-                                ${current == components.length - 1 ? "text-[var(--text-hover)]" : ""}`}
+                                ${current == components.length - 1 ? "text-[var(--text-dhover)]" : ""}`}
                   />
                 }
                 style={`${current == 0 ? "pointer-events-none" : ""}`}
