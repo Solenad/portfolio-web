@@ -11,19 +11,34 @@ export default function Card() {
   const [darkMode, setDarkMode] = useState(true);
 
   useEffect(function () {
-    let saved_mode = localStorage.getItem("display");
-
+    let saved_mode = localStorage.getItem("display") || "dark";
     if (!saved_mode) {
       saved_mode = "dark";
-      setDarkMode(true);
       localStorage.setItem("display", saved_mode);
     }
 
-    setDarkMode(saved_mode === "light" ? true : false);
+    setDarkMode(saved_mode === "dark" ? true : false);
+
+    if (saved_mode === "dark") {
+      document.documentElement.classList.add("dark");
+    } else {
+      document.documentElement.classList.remove("dark");
+    }
   }, []);
 
   const toggleDisplay = function () {
-    setDarkMode(!darkMode);
+    setDarkMode(function (prev) {
+      const new_mode = !prev;
+      localStorage.setItem("display", new_mode ? "dark" : "light");
+
+      if (new_mode) {
+        document.documentElement.classList.add("dark");
+      } else {
+        document.documentElement.classList.remove("dark");
+      }
+
+      return new_mode;
+    });
   };
 
   const handleOpen = function () {
@@ -31,12 +46,16 @@ export default function Card() {
   };
 
   return (
-    <div className="bg-[var(--background-color)] text-[var(--text-dark)] flex justify-center items-center min-h-[100vh]">
+    <div
+      className="bg-[var(--background-color)] text-[var(--text-dark)] flex justify-center items-center min-h-[100vh]
+    dark:bg-[var(--bg-light)] dark:text-[var(--text-light)]"
+    >
       {/* card */}
       <div
         className="rounded-xl  shadow-xl overflow-hidden 
         flex flex-row absolute lg:relative
-        w-[90%] h-[85vh] bg-gradient-to-b from-[var(--card-color1)] to-[var(--card-color2)]"
+        w-[90%] h-[85vh] bg-gradient-to-b from-[var(--card-color1)] to-[var(--card-color2)]
+        dark:bg-gradient-to-b dark:from-[var(--card-color1l)] dark:to-[var(--card-color2l)] transition-colors duration-300 ease-in-out"
       >
         {/* sidebar panel */}
         <div className="left-side min-w-[225px] absolute overflow-hidden lg:relative h-full">
@@ -48,7 +67,7 @@ export default function Card() {
           </div>*/}
 
           <Hamburger
-            style={"absolute z-50 ml-5 mt-5 "}
+            style={"absolute z-50 ml-5 mt-5"}
             handleOpen={handleOpen}
           />
 
