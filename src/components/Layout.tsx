@@ -41,6 +41,14 @@ export default function Card() {
     });
   };
 
+  if (darkMode === null) {
+    return (
+      <div className="bg-black text-white min-h-screen flex justify-center items-center">
+        Loading...
+      </div>
+    );
+  }
+
   const handleOpen = function () {
     setSidebarOpen((prev) => !prev);
   };
