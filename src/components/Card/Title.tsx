@@ -10,12 +10,12 @@ export default function Title({ sidebarOpen, style }: props) {
   return (
     <div className={`${style} h-full w-full flex justify-center`}>
       <div
-        className={`h-full z-0 flex flex-col justify-center text-center lg:text-left px-10 md:px-20 lg:px-40 transition-transform duration-500 
+        className={`h-full z-0 flex flex-col justify-center text-center lg:text-left px-5 md:px-20 lg:px-40 transition-transform duration-500 
              items-center text-nowrap 
              lg:mt-30 lg:relative lg:items-start ${sidebarOpen ? "lg:translate-x-0" : "lg:-translate-x-[20%]"}`}
       >
         <motion.p
-          className="text-5xl text-nowrap md:text-7xl lg:text-9xl font-bold font-['Montserrat'] mb-4"
+          className="text-5xl text-nowrap whitespace-nowrap md:text-7xl lg:text-9xl font-bold font-['Montserrat'] mb-4 min-w-max"
           initial={{ opacity: 0, y: -50 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1, ease: "easeOut" }}
