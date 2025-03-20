@@ -29,7 +29,7 @@ export default function About({ style, sidebarOpen }: props) {
           </div>
         </div>
 
-        <div className="flex flex-row items-center">
+        <div className="flex flex-row items-center justify-center">
           {/* carousel for contents */}
           <div className="h-full w-full flex flex-grow justify-center">
             <div className="bg-[var(--sidebar)] w-[80%] lg:w-full min-h-[250px] md:min-h-[100px] lg:min-h-[275px] rounded-lg shadow-md flex flex-row">
@@ -37,17 +37,18 @@ export default function About({ style, sidebarOpen }: props) {
                 <h1 className=" text-xl md:text-md lg:text-3xl h-[8vh]   font-bold font-['Montserrat'] text-nowrap">
                   About Me
                 </h1>
-                <p className="w-[90%]">
+                <p className="w-[90%] text-xs lg:text-lg lg:w-full">
                   An enthusiastic computer science undergraduate with a passion
-                  for problem-solving. Thrives in team environments, leveraging
-                  organizational skills for better project management. Utilizes
-                  writing, programming, and communication skills to effectively
-                  innovate solutions.
+                  for project-management and web development. I am continuously
+                  sharpening my skills as a developer whilst handling short and
+                  long term projects.
                 </p>
               </div>
+              <button className="w-[10%]">
+                <i className="bx bx-chevron-right text-xl lg:text-6xl" />
+              </button>
             </div>
           </div>
-          <i className="bx bx-chevron-right text-6xl absolute right-0"></i>
         </div>
       </div>
     </div>
