@@ -47,7 +47,7 @@ export default function Card() {
         >
           <Title
             sidebarOpen={sidebarOpen}
-            style={`transition-transform duration-1000 ease-in-out ${focus != 0 ? "-translate-y-[80vh]" : "translate-y-[25vh] lg:translate-y-[30vh]"}`}
+            style={`transition-transform duration-1000 ease-in-out ${focus != 0 ? "-translate-y-[80vh]" : "translate-y-[30vh]"}`}
           />
           <About
             sidebarOpen={sidebarOpen}
