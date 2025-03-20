@@ -31,7 +31,7 @@ export default function About({ style, sidebarOpen }: props) {
         {/* carousel for contents */}
         <div className="h-full w-full flex flex-grow justify-center">
           <div className="bg-[var(--sidebar)] w-[80%] lg:w-full min-h-[250px] lg:min-h-[275px] rounded-lg shadow-lg flex flex-row">
-            <h1 className=" text-xl lg:text-3xl h-full min-w-50% p-5 font-['Montserrat']">
+            <h1 className=" text-xl lg:text-3xl h-full min-w-50% p-5 font-bold font-['Montserrat']">
               About Me{" "}
             </h1>
           </div>
