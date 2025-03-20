@@ -11,7 +11,7 @@ export default function Card() {
   const [darkMode, setDarkMode] = useState<boolean | null>(null);
 
   useEffect(function () {
-    let saved_mode = localStorage.getItem("display") || "dark";
+    let saved_mode = localStorage.getItem("display");
     if (!saved_mode) {
       saved_mode = "dark";
       localStorage.setItem("display", saved_mode);
@@ -47,6 +47,7 @@ export default function Card() {
         Loading...
       </div>
     );
+    // Ensures no flicker by keeping the background dark during hydration
   }
 
   const handleOpen = function () {
