@@ -8,47 +8,38 @@ import DisplayButton from "./DisplayButton.tsx";
 export default function Card() {
   const [focus, setFocus] = useState(0);
   const [sidebarOpen, setSidebarOpen] = useState(false);
-  const [darkMode, setDarkMode] = useState<boolean | null>(null);
+  const [darkMode, setDarkMode] = useState(true);
 
   useEffect(function () {
-    let saved_mode = localStorage.getItem("display") || "dark";
+    let saved_mode = localStorage.getItem("display");
     if (!saved_mode) {
       saved_mode = "dark";
       localStorage.setItem("display", saved_mode);
     }
 
-    setDarkMode(saved_mode === "dark" ? false : true);
+    setDarkMode(saved_mode === "dark" ? true : false);
 
     if (saved_mode === "dark") {
-      document.documentElement.classList.remove("dark");
-    } else {
       document.documentElement.classList.add("dark");
+    } else {
+      document.documentElement.classList.remove("dark");
     }
   }, []);
 
   const toggleDisplay = function () {
     setDarkMode(function (prev) {
       const new_mode = !prev;
-      localStorage.setItem("display", new_mode ? "light" : "dark");
+      localStorage.setItem("display", new_mode ? "dark" : "light");
 
       if (new_mode) {
-        document.documentElement.classList.remove("dark");
-      } else {
         document.documentElement.classList.add("dark");
+      } else {
+        document.documentElement.classList.remove("dark");
       }
 
       return new_mode;
     });
   };
-
-  if (darkMode === null) {
-    return (
-      <div className="bg-black text-white min-h-screen flex justify-center items-center">
-        Loading...
-      </div>
-    );
-    // Ensures no flicker by keeping the background dark during hydration
-  }
 
   const handleOpen = function () {
     setSidebarOpen((prev) => !prev);
@@ -56,15 +47,15 @@ export default function Card() {
 
   return (
     <div
-      className="bg-[var(--background-color)] text-[var(--text-dark)] flex justify-center items-center min-h-[100vh]
-    dark:bg-[var(--bg-light)] dark:text-[var(--text-light)] transition-colors duration-300 ease-in-out"
+      className="bg-[var(--bg-light)] text-[var(--text-light)] flex justify-center items-center min-h-[100vh]
+    dark:bg-[var(--background-color)] dark:text-[var(--text-dark)] transition-colors duration-300 ease-in-out"
     >
       {/* card */}
       <div
         className="rounded-xl  shadow-xl overflow-hidden 
         flex flex-row absolute lg:relative
-        w-[90%] h-[85vh] bg-gradient-to-b from-[var(--card-color1)] to-[var(--card-color2)]
-        dark:bg-gradient-to-b dark:from-[var(--card-color1l)] dark:to-[var(--card-color2l)] transition-colors duration-300 ease-in-out"
+        w-[90%] h-[85vh] bg-gradient-to-b from-[var(--card-color1l)] to-[var(--card-color2l)]
+        dark:from-[var(--card-color1)] dark:to-[var(--card-color2)] transition-colors duration-300 ease-in-out"
       >
         {/* sidebar panel */}
         <div className="left-side min-w-[225px] absolute overflow-hidden lg:relative h-full">
