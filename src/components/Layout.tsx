@@ -10,34 +10,19 @@ export default function Card() {
   const [sidebarOpen, setSidebarOpen] = useState(false);
   const [darkMode, setDarkMode] = useState(true);
 
-  useEffect(function () {
-    let saved_mode = localStorage.getItem("display");
-    if (!saved_mode) {
-      saved_mode = "dark";
-      localStorage.setItem("display", saved_mode);
-    }
-
-    setDarkMode(saved_mode === "dark" ? true : false);
-
-    if (saved_mode === "dark") {
+  useEffect(() => {
+    if (darkMode) {
       document.documentElement.classList.add("dark");
     } else {
       document.documentElement.classList.remove("dark");
     }
-  }, []);
+  }, [darkMode]);
 
-  const toggleDisplay = function () {
-    setDarkMode(function (prev) {
-      const new_mode = !prev;
-      localStorage.setItem("display", new_mode ? "dark" : "light");
-
-      if (new_mode) {
-        document.documentElement.classList.add("dark");
-      } else {
-        document.documentElement.classList.remove("dark");
-      }
-
-      return new_mode;
+  const toggleDisplay = () => {
+    setDarkMode((prev) => {
+      const newMode = !prev;
+      localStorage.setItem("display", newMode ? "dark" : "light");
+      return newMode;
     });
   };
 
