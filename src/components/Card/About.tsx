@@ -6,17 +6,17 @@ interface props {
 export default function About({ style, sidebarOpen }: props) {
   return (
     <div
-      className={`${style} flex w-full h-full justify-center md:justify-start lg:justify-start `}
+      className={`${style} flex flex-col w-full h-full justify-center md:justify-center lg:justify-start `}
     >
       {/*transition for sidebar*/}
       <div
         className={`transition-transform duration-500 ease-in-out ${sidebarOpen ? "lg:translate-x-[20%]" : ""}`}
       >
         {/* profile image and greeting */}
-        <div className="max-h-[60%] flex flex-col lg:flex-row w-full justify-center lg:justify-start items-center gap-15 lg:gap-25">
+        <div className="max-h-[60%] flex flex-col md:flex-row lg:flex-row w-full justify-center lg:justify-start items-center gap-15 md:gap-10 lg:gap-25">
           <div className="bg-[var(--card-block)] max-h-[225px] shadow-lg rounded-lg border border-[var(--card-color1)]">
             <img
-              className="w-[150px] lg:w-[225px] p-2"
+              className="w-[150px] md:w-[125px] lg:w-[225px] p-2"
               src="https://avatars.githubusercontent.com/u/166220458?s=96&v=4"
             />
           </div>
@@ -25,6 +25,9 @@ export default function About({ style, sidebarOpen }: props) {
             Hi, I'm Roe!
           </div>
         </div>
+
+        {/* carousel for contents */}
+        <div className="bg-[var(--card-block)] w-full min-h-[30%] h-full  mx-2"></div>
       </div>
     </div>
   );

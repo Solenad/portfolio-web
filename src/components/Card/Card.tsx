@@ -51,7 +51,7 @@ export default function Card() {
           />
           <About
             sidebarOpen={sidebarOpen}
-            style={`transition-transform duration-1000 ease-in-out ${focus == 1 ? "-translate-y-[30vh]" : ""} ${focus > 1 ? "-translate-y-[80vh]" : ""} ${focus < 1 ? "translate-y-[80vh]" : ""}`}
+            style={`transition-transform duration-1000 ease-in-out ${focus == 1 ? "-translate-y-[30vh] lg:-translate-y-[30vh]" : ""} ${focus > 1 ? "-translate-y-[80vh]" : ""} ${focus < 1 ? "translate-y-[80vh]" : ""}`}
           />
         </div>
       </div>
