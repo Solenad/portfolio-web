@@ -10,7 +10,7 @@ export default function Title({ sidebarOpen, style }: props) {
   return (
     <div className={`${style} h-full w-full flex justify-center`}>
       <div
-        className={`h-full z-0 flex flex-col justify-center text-left px-10 md:px-20 lg:px-40 transition-transform duration-500 
+        className={`h-full z-0 flex flex-col justify-center lg:text-left px-10 md:px-20 lg:px-40 transition-transform duration-500 
              items-center text-nowrap 
              lg:mt-30 lg:relative lg:items-start ${sidebarOpen ? "lg:translate-x-0" : "lg:-translate-x-[20%]"}`}
       >
