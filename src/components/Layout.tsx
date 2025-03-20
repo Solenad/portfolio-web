@@ -8,7 +8,7 @@ import DisplayButton from "./DisplayButton.tsx";
 export default function Card() {
   const [focus, setFocus] = useState(0);
   const [sidebarOpen, setSidebarOpen] = useState(false);
-  const [darkMode, setDarkMode] = useState(true);
+  const [darkMode, setDarkMode] = useState<boolean | null>(null);
 
   useEffect(function () {
     let saved_mode = localStorage.getItem("display") || "dark";
@@ -48,7 +48,7 @@ export default function Card() {
   return (
     <div
       className="bg-[var(--background-color)] text-[var(--text-dark)] flex justify-center items-center min-h-[100vh]
-    dark:bg-[var(--bg-light)] dark:text-[var(--text-light)]"
+    dark:bg-[var(--bg-light)] dark:text-[var(--text-light)] transition-colors duration-300 ease-in-out"
     >
       {/* card */}
       <div
