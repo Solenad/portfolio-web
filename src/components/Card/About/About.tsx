@@ -33,7 +33,7 @@ export default function About({ style, sidebarOpen }: props) {
 
   return (
     <div
-      className={`${style} transition-colors duration-300 flex flex-col w-full h-full justify-center md:justify-center lg:justify-start
+      className={`${style}  flex flex-col w-full h-full justify-center md:justify-center lg:justify-start
                   `}
     >
       {/* transition for sidebar */}
@@ -46,6 +46,7 @@ export default function About({ style, sidebarOpen }: props) {
         <div className="max-h-[60%] flex flex-col md:flex-row lg:flex-row w-full justify-center lg:justify-start items-center gap-5 md:gap-10 lg:gap-25">
           <div
             className="bg-[var(--card-color1l)] dark:bg-[var(--card-block)] max-h-[225px] shadow-lg rounded-lg border border-gray-400 dark:border-[var(--card-color1)]
+            
           "
           >
             <img

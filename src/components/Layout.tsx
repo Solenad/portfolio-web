@@ -33,14 +33,14 @@ export default function Card() {
   return (
     <div
       className="bg-[var(--bg-light)] text-[var(--text-light)] flex justify-center items-center min-h-[100vh]
-    dark:bg-[var(--background-color)] dark:text-[var(--text-dark)] transition-colors duration-300 ease-in-out "
+    dark:bg-[var(--background-color)] dark:text-[var(--text-dark)] transition-colors duration-300 ease-in-out"
     >
       {/* card */}
       <div
         className="rounded-xl  shadow-xl overflow-hidden 
         flex flex-row absolute lg:relative
-        w-[90%] h-[85vh] bg-[var(--card-color1l)]
-        dark:from-[var(--card-color1)] dark:to-[var(--card-color2)] group:transition-colors group:duration-300 group:ease-in-out"
+        w-[90%] h-[85vh] bg-[var(--card-color1l)] dark:bg-linear-to-b
+        dark:from-[var(--card-color1)] dark:to-[var(--card-color2)] "
       >
         {/* sidebar panel */}
         <div className="left-side min-w-[225px] absolute overflow-hidden lg:relative h-full">
@@ -74,7 +74,10 @@ export default function Card() {
           />
           <About
             sidebarOpen={sidebarOpen}
-            style={`transition-transform duration-1000 ease-in-out ${focus == 1 ? "-translate-y-[8vh] sm:-translate-y-[10vh] lg:-translate-y-[20vh]" : ""} ${focus > 1 ? "lg:-translate-y-[100vh] " : ""} ${focus < 1 ? "translate-y-[80vh]" : ""}`}
+            style={`transition-transform duration-1000 ease-in-out ${focus == 1 ? "-translate-y-[8vh] sm:-translate-y-[10vh] lg:-translate-y-[20vh]" : ""} 
+              ${focus > 1 ? "lg:-translate-y-[100vh] " : ""}
+              ${focus < 1 ? "translate-y-[80vh]" : ""}
+              `}
           />
         </div>
         <div className="absolute right-0 mr-5 mt-5">
