@@ -11,7 +11,6 @@ export default function Sidebar({ style, focus, setFocus }: props) {
   const icon = [
     { icon: "bx-home", label: "Home" },
     { icon: "bx-user", label: "About" },
-    { icon: "bx-terminal", label: "Tech" },
     { icon: "bx-code", label: "Projects" },
   ];
 
@@ -43,8 +42,12 @@ export default function Sidebar({ style, focus, setFocus }: props) {
           </button>
         ))}
       </div>
-      <div className="mt-auto ml-6 text-sm">Roe Dizon</div>
-      <div className="mb-9 ml-6 text-sm">2025</div>
+      <div className="mt-auto ml-6 text-sm dark:text-[var(--text-dark)] transition-colors duration-300 ease-in-out">
+        Roe Dizon
+      </div>
+      <div className="mb-9 ml-6 text-sm dark:text-[var(--text-dark)] transition-colors duration-300 ease-in-out">
+        2025
+      </div>
     </div>
   );
 }

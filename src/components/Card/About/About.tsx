@@ -57,7 +57,7 @@ export default function About({ style, sidebarOpen }: props) {
               src="https://avatars.githubusercontent.com/u/166220458?s=96&v=4"
             />
           </div>
-          <div className="text-4xl md:text-6xl lg:text-8xl font-[1000] font-['Montserrat'] text-[var(--text-light)] dark:text-[var(--text-dark)] transition-colors duration-300 ease-in-out">
+          <div className="animate-spin text-4xl md:text-6xl lg:text-8xl font-[1000] font-['Montserrat'] text-[var(--text-light)] dark:text-[var(--text-dark)] transition-colors duration-300 ease-in-out">
             Hi, I'm Roe!
           </div>
         </div>
