@@ -33,7 +33,8 @@ export default function About({ style, sidebarOpen }: props) {
 
   return (
     <div
-      className={`${style} flex flex-col w-full h-full justify-center md:justify-center lg:justify-start`}
+      className={`${style} transition-colors duration-300 flex flex-col w-full h-full justify-center md:justify-center lg:justify-start
+                  `}
     >
       {/* transition for sidebar */}
       <div
@@ -43,7 +44,10 @@ export default function About({ style, sidebarOpen }: props) {
       >
         {/* profile image and greeting */}
         <div className="max-h-[60%] flex flex-col md:flex-row lg:flex-row w-full justify-center lg:justify-start items-center gap-5 md:gap-10 lg:gap-25">
-          <div className="bg-[var(--card-block)] max-h-[225px] shadow-lg rounded-lg border border-[var(--card-color1)]">
+          <div
+            className="bg-[var(--card-color1l)] dark:bg-[var(--card-block)] max-h-[225px] shadow-lg rounded-lg border border-gray-400 dark:border-[var(--card-color1)]
+          "
+          >
             <img
               className="w-[20vh] md:w-[30vh] lg:w-[225px] p-2"
               src="https://avatars.githubusercontent.com/u/166220458?s=96&v=4"
@@ -58,8 +62,8 @@ export default function About({ style, sidebarOpen }: props) {
         <div className="flex flex-row items-center justify-center">
           <div className="h-full w-full flex flex-grow justify-center">
             <div
-              className="bg-[var(--sidebar)] w-[80%] lg:w-full min-h-[250px] md:min-h-[100px] lg:min-h-[275px] 
-                             rounded-lg shadow-md flex flex-row"
+              className="bg-[var(--card-color1l)] dark:bg-[var(--card-block)] w-[80%] lg:w-full min-h-[250px] md:min-h-[100px] lg:min-h-[275px] 
+                             rounded-lg shadow-md flex flex-row "
             >
               <Button
                 change={() => api && api?.scrollTo(current - 1)}

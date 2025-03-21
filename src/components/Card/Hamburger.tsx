@@ -9,10 +9,13 @@ interface Props {
 export default function Hamburger({ style, handleOpen }: Props) {
   return (
     <button
-      className={`p-2 hover:text-[var(--text-dhover)]  cursor-pointer ${style}`}
+      className={`p-2 group hover:text-[var(--text-dhover)] cursor-pointer ${style}`}
       onClick={handleOpen}
     >
-      <FontAwesomeIcon className="text-2xl" icon={faBars} />
+      <FontAwesomeIcon
+        className="text-2xl  group-hover:transition-colors group-hover:duration-300 group:ease-in-out"
+        icon={faBars}
+      />
     </button>
   );
 }
