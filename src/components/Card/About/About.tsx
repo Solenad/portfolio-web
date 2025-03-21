@@ -77,7 +77,7 @@ export default function About({ style, sidebarOpen }: props) {
                       ${current == 0 ? "text-[var(--text-dhover)]" : "text-[var(--text-light)] dark:text-[var(--text-dark)]"}`}
                   />
                 }
-                style={`${components.length == 0 ? "pointer-events-none" : ""}`}
+                style={`${current == 0 ? "pointer-events-none" : ""}`}
               />
               <Carousel setApi={setApi} className="h-full w-full  p-3 lg:p-7">
                 <CarouselContent>
@@ -96,7 +96,7 @@ export default function About({ style, sidebarOpen }: props) {
                                 ${current == components.length - 1 ? "text-[var(--text-dhover)]" : "text-[var(--text-light)] dark:text-[var(--text-dark)]"}`}
                   />
                 }
-                style={`${components.length == 0 ? "pointer-events-none" : ""}`}
+                style={`${current == components.length - 1 ? "pointer-events-none" : ""}`}
               />
             </div>
           </div>

@@ -81,7 +81,7 @@ export default function Card() {
           />
         </div>
         <div className="absolute right-0 mr-5 mt-5">
-          <DisplayButton toggleDisplay={toggleDisplay} />
+          <DisplayButton toggleDisplay={toggleDisplay} display={darkMode} />
         </div>
       </div>
     </div>
