@@ -17,12 +17,13 @@ export default function Sidebar({ style, focus, setFocus }: props) {
 
   return (
     <div
-      className={`bg-[var(--sidebar)] h-full w-full flex flex-col  ${style}`}
+      className={`bg-[var(--sidebar-light)] h-full w-full flex flex-col dark:bg-[var(--sidebar)] transition-colors duration-300 ease-in-out
+        ${style}`}
     >
       <div className="placeholder h-[16%]" />
       <div className="relative items text-lg flex flex-col items-center gap-y-5">
         <motion.div
-          className="absolute  w-full h-10 bg-[var(--sidebar-btn-hover)]"
+          className="absolute  w-full h-10 bg-[var(--sidebar-btn-hoverl)] dark:bg-[var(--sidebar-btn-hover)] transition-colors duration-300 ease-in-out"
           initial={{ y: 0 }}
           animate={{ y: focus * 60 }}
           transition={{ type: "spring", duration: 0.5 }}
@@ -30,7 +31,8 @@ export default function Sidebar({ style, focus, setFocus }: props) {
 
         {icon.map((item, index) => (
           <button
-            className={`z-10 group mr-2 w-[70%] h-10 text-left text-md  lg:text-lg`}
+            className={`z-10 group mr-2 w-[70%] h-10 text-left text-mdlg:text-lg text-[var(--text-light)] dark:text-[var(--text-dark)]
+                       transition-colors duration-300 ease-in-out`}
             key={index}
             onClick={() => setFocus(index)}
           >

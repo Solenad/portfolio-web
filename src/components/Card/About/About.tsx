@@ -46,6 +46,7 @@ export default function About({ style, sidebarOpen }: props) {
         <div className="max-h-[60%] flex flex-col md:flex-row lg:flex-row w-full justify-center lg:justify-start items-center gap-5 md:gap-10 lg:gap-25">
           <div
             className="bg-[var(--card-color1l)] dark:bg-[var(--card-block)] max-h-[225px] shadow-lg rounded-lg border border-gray-400 dark:border-[var(--card-color1)]
+            transition-colors duration-300 ease-in-out
             
           "
           >
@@ -54,7 +55,7 @@ export default function About({ style, sidebarOpen }: props) {
               src="https://avatars.githubusercontent.com/u/166220458?s=96&v=4"
             />
           </div>
-          <div className="text-4xl md:text-6xl lg:text-8xl font-[1000] font-['Montserrat'] ">
+          <div className="text-4xl md:text-6xl lg:text-8xl font-[1000] font-['Montserrat'] text-[var(--text-light)] dark:text-[var(--text-dark)] transition-colors duration-300 ease-in-out">
             Hi, I'm Roe!
           </div>
         </div>
@@ -63,8 +64,8 @@ export default function About({ style, sidebarOpen }: props) {
         <div className="flex flex-row items-center justify-center">
           <div className="h-full w-full flex flex-grow justify-center">
             <div
-              className="bg-[var(--card-color1l)] dark:bg-[var(--card-block)] w-[80%] lg:w-full min-h-[250px] md:min-h-[100px] lg:min-h-[275px] 
-                             rounded-lg shadow-md flex flex-row "
+              className="bg-[var(--card-color1l)] border border-gray-400 dark:border-[var(--card-block)] dark:bg-[var(--card-block)] w-[80%] lg:w-full min-h-[250px] md:min-h-[100px] lg:min-h-[275px] 
+                             rounded-lg shadow-md flex flex-row transition-colors duration-300 ease-in-out"
             >
               <Button
                 change={() => api && api?.scrollTo(current - 1)}
