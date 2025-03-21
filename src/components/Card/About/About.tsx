@@ -41,7 +41,7 @@ export default function About({ style, sidebarOpen }: props) {
       {/* transition for sidebar */}
       <div
         className={`transition-transform duration-500 ease-in-out 
-                flex flex-col gap-y-10 md:gap-y-5 lg:gap-y-12 mx-4 
+                flex flex-col gap-y-5 md:gap-y-5 lg:gap-y-12 mx-4 
                 ${sidebarOpen ? "lg:translate-x-[20%]" : ""}`}
       >
         {/* profile image and greeting */}
@@ -66,14 +66,14 @@ export default function About({ style, sidebarOpen }: props) {
         <div className="flex flex-row items-center justify-center">
           <div className="h-full w-full flex flex-grow justify-center">
             <div
-              className="bg-[var(--card-color1l)] border border-gray-400 dark:border-[var(--card-block)] dark:bg-[var(--card-block)] w-[80%] lg:w-full min-h-[250px] md:min-h-[100px] lg:min-h-[275px] 
+              className="bg-[var(--card-color1l)] border border-gray-400 dark:border-[var(--card-block)] dark:bg-[var(--card-block)] w-[90%] lg:w-full min-h-[250px] md:min-h-[100px] lg:min-h-[275px] 
                              rounded-lg shadow-md flex flex-row transition-colors duration-300 ease-in-out"
             >
               <Button
                 change={() => api && api?.scrollTo(current - 1)}
                 content={
                   <i
-                    className={`bx bx-chevron-left text-xl lg:text-4xl text-center transition-colors duration-300 ease-in-out
+                    className={`bx bx-chevron-left w-[50%] lg:w-full text-xl lg:text-4xl text-center transition-colors duration-300 ease-in-out
                       ${current == 0 ? "text-[var(--text-dhover)]" : "text-[var(--text-light)] dark:text-[var(--text-dark)]"}`}
                   />
                 }
