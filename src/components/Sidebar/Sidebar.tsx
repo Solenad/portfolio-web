@@ -16,7 +16,9 @@ export default function Sidebar({ style, focus, setFocus }: props) {
   ];
 
   return (
-    <div className={`bg-[var(--sidebar)] h-full w-full flex flex-col ${style}`}>
+    <div
+      className={`bg-[var(--sidebar)] h-full w-full flex flex-col  ${style}`}
+    >
       <div className="placeholder h-[16%]" />
       <div className="relative items text-lg flex flex-col items-center gap-y-5">
         <motion.div
@@ -33,7 +35,7 @@ export default function Sidebar({ style, focus, setFocus }: props) {
             onClick={() => setFocus(index)}
           >
             <i className={`bx ${item.icon} mr-3`} />{" "}
-            <span className="inline-block group-hover:scale-125 transition duration-100 ease-in-out">
+            <span className="inline-block group-hover:scale-125 transition-transform duration-100 ease-in-out">
               {item.label}
             </span>
           </button>

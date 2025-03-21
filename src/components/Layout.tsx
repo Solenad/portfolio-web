@@ -33,14 +33,14 @@ export default function Card() {
   return (
     <div
       className="bg-[var(--bg-light)] text-[var(--text-light)] flex justify-center items-center min-h-[100vh]
-    dark:bg-[var(--background-color)] dark:text-[var(--text-dark)] transition-colors duration-300 ease-in-out"
+    dark:bg-[var(--background-color)] dark:text-[var(--text-dark)] "
     >
       {/* card */}
       <div
         className="rounded-xl  shadow-xl overflow-hidden 
         flex flex-row absolute lg:relative
         w-[90%] h-[85vh] bg-gradient-to-b from-[var(--card-color1l)] to-[var(--card-color2l)]
-        dark:from-[var(--card-color1)] dark:to-[var(--card-color2)] transition-colors duration-300 ease-in-out"
+        dark:from-[var(--card-color1)] dark:to-[var(--card-color2)] "
       >
         {/* sidebar panel */}
         <div className="left-side min-w-[225px] absolute overflow-hidden lg:relative h-full">
@@ -57,7 +57,7 @@ export default function Card() {
           />
 
           <div
-            className={`absolute h-full min-w-full z-30 transition-transform duration-500 ease-in-out ${sidebarOpen ? "translate-x-0" : "-translate-x-full"}`}
+            className={`absolute h-full min-w-full z-30 transition-transform duration-500  ${sidebarOpen ? "translate-x-0" : "-translate-x-full"}`}
           >
             <Sidebar style={"block"} focus={focus} setFocus={setFocus} />
           </div>
