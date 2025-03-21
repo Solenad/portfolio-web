@@ -1,6 +1,7 @@
 import "boxicons/css/boxicons.min.css";
 import Button from "./Button.tsx";
 import Info from "./Info.tsx";
+import Tech from "./Tech.tsx";
 import { useState, useEffect } from "react";
 import { type CarouselApi } from "@/components/ui/carousel";
 import {
@@ -18,7 +19,7 @@ export default function About({ style, sidebarOpen }: props) {
   const [api, setApi] = useState<CarouselApi>();
   const [current, setCurrent] = useState(0);
 
-  const components = [Info];
+  const components = [Info, Tech];
 
   useEffect(() => {
     if (!api) {
@@ -57,7 +58,7 @@ export default function About({ style, sidebarOpen }: props) {
               src="https://avatars.githubusercontent.com/u/166220458?s=96&v=4"
             />
           </div>
-          <div className="animate-spin text-4xl md:text-6xl lg:text-8xl font-[1000] font-['Montserrat'] text-[var(--text-light)] dark:text-[var(--text-dark)] transition-colors duration-300 ease-in-out">
+          <div className="text-4xl md:text-6xl lg:text-8xl font-[1000] font-['Montserrat'] text-[var(--text-light)] dark:text-[var(--text-dark)] transition-colors duration-300 ease-in-out">
             Hi, I'm Roe!
           </div>
         </div>
@@ -66,20 +67,10 @@ export default function About({ style, sidebarOpen }: props) {
         <div className="flex flex-row items-center justify-center">
           <div className="h-full w-full flex flex-grow justify-center">
             <div
-              className="bg-[var(--card-color1l)] border border-gray-400 dark:border-[var(--card-block)] dark:bg-[var(--card-block)] w-[90%] lg:w-full min-h-[250px] md:min-h-[100px] lg:min-h-[275px] 
-                             rounded-lg shadow-md flex flex-row transition-colors duration-300 ease-in-out"
+              className="bg-[var(--card-color1l)] border border-gray-400 dark:border-[var(--card-block)] dark:bg-[var(--card-block)] min-w-[90%] lg:w-full min-h-[260px] md:min-h-[100px] lg:min-h-[295px] 
+                             rounded-lg shadow-md transition-colors duration-300 ease-in-out flex flex-col"
             >
-              <Button
-                change={() => api && api?.scrollTo(current - 1)}
-                content={
-                  <i
-                    className={`bx bx-chevron-left w-[50%] lg:w-full text-xl lg:text-4xl text-center transition-colors duration-300 ease-in-out
-                      ${current == 0 ? "text-[var(--text-dhover)]" : "text-[var(--text-light)] dark:text-[var(--text-dark)]"}`}
-                  />
-                }
-                style={`${current == 0 ? "pointer-events-none" : ""}`}
-              />
-              <Carousel setApi={setApi} className="h-full w-full  p-3 lg:p-7">
+              <Carousel setApi={setApi} className="h-full w-full p-3 lg:p-7">
                 <CarouselContent>
                   {components.map((Component, index) => (
                     <CarouselItem key={index}>
@@ -88,16 +79,29 @@ export default function About({ style, sidebarOpen }: props) {
                   ))}
                 </CarouselContent>
               </Carousel>
-              <Button
-                change={() => api && api?.scrollTo(current + 1)}
-                content={
-                  <i
-                    className={`bx bx-chevron-right text-xl lg:text-4xl text-center transition-colors duration-300    ease-in-out
+              <div className="flex flex-row justify-center gap-x-4">
+                <Button
+                  change={() => api && api?.scrollTo(current - 1)}
+                  content={
+                    <i
+                      className={`bx bx-chevron-left w-full h-full text-xl lg:text-4xl text-center transition-colors duration-300 ease-in-out
+                      ${current == 0 ? "text-[var(--text-dhover)]" : "text-[var(--text-light)] dark:text-[var(--text-dark)]"}`}
+                    />
+                  }
+                  style={`${current == 0 ? "pointer-events-none" : ""}`}
+                />
+
+                <Button
+                  change={() => api && api?.scrollTo(current + 1)}
+                  content={
+                    <i
+                      className={`bx bx-chevron-right w-full h-full text-xl lg:text-4xl text-center transition-colors duration-300    ease-in-out
                                 ${current == components.length - 1 ? "text-[var(--text-dhover)]" : "text-[var(--text-light)] dark:text-[var(--text-dark)]"}`}
-                  />
-                }
-                style={`${current == components.length - 1 ? "pointer-events-none" : ""}`}
-              />
+                    />
+                  }
+                  style={`${current == components.length - 1 ? "pointer-events-none" : ""}`}
+                />
+              </div>
             </div>
           </div>
         </div>
