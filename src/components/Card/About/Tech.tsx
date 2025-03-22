@@ -1,16 +1,70 @@
 import "boxicons/css/boxicons.min.css";
 
-// TODO: describe what you do
+const tech = [
+  {
+    title: "Languages",
+    items: [
+      "devicon-c-plain",
+      "devicon-java-plain",
+      "devicon-html5-plain",
+      "devicon-css3-plain",
+      "devicon-javascript-plain",
+      "devicon-typescript-plain",
+      "devicon-python-plain",
+      "devicon-markdown-original",
+      "devicon-r-plain",
+    ],
+  },
+  {
+    title: "Frameworks and Databases",
+    items: [
+      "devicon-react-original",
+      "devicon-tailwindcss-original",
+      "devicon-express-original",
+      "devicon-mysql-original",
+      "devicon-mongodb-plain",
+      "devicon-firebase-plain",
+    ],
+  },
+  {
+    title: "Tools",
+    items: [
+      "devicon-neovim-plain",
+      "devicon-vscode-plain",
+      "devicon-nodejs-line",
+      "devicon-powershell-plain",
+      "devicon-git-plain",
+      "devicon-vitejs-plain",
+      "devicon-figma-plain",
+    ],
+  },
+];
+
 export default function Tech() {
   return (
-    <div className="text-[var(--text-light)] dark:text-[var(--text-dark)] transition-colors duration-300 ease-in-out px-3">
+    <div className="text-[var(--text-light)] dark:text-[var(--text-dark)] px-3">
       <h1
-        className=" text-xl md:text-md lg:text-3xl h-[6vh] md:h-[8vh] lg:h-[8vh] 
-                      font-bold font-['Montserrat'] text-nowrap text-center lg:text-start flex flex-row justify-start items-center"
+        className=" text-xl md:text-md lg:text-3xl h-[6vh] md:h-[8vh] lg:h-[8vh] mb-4
+                      font-bold font-['Montserrat'] text-nowrap text-center lg:text-start flex flex-row justify-start lg:justify-center items-center"
       >
-        <i className="bx bx-terminal pr-2 lg:pr-4" /> Tech
+        <i className="bx bx-terminal pr-2 lg:pr-4 font-bold" /> Tech
       </h1>
-      <p className="w-full text-xs lg:text-lg lg:w-full mb-2 lg:mb-0 text-center md:text-justify lg:text-justify"></p>
+      <div className="w-full flex flex-row flex-wrap justify-between">
+        {tech.map((category, index) => (
+          <div
+            key={index}
+            className=" text-3xl space-x-2 dark:bg-[var(--card-color2)] w-[30%] p-4 rounded-lg  dark:border-gray-700 
+        bg-[var(--sidebar-light)] transition-colors duration-300 ease-in-out border border-gray-400"
+          >
+            <p className="text-xl mb-4 text-center">{category.title}</p>
+            <div className="flex flex-wrap gap-2">
+              {category.items.map((icon, index2) => (
+                <i key={index2} className={icon} />
+              ))}
+            </div>
+          </div>
+        ))}
+      </div>
     </div>
   );
 }
