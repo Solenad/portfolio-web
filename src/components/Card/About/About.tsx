@@ -42,7 +42,7 @@ export default function About({ style, sidebarOpen }: props) {
       {/* transition for sidebar */}
       <div
         className={`transition-transform duration-500 ease-in-out 
-                flex flex-col gap-y-5 md:gap-y-5 lg:gap-y-12 mx-4 
+                flex flex-col gap-y-4 md:gap-y-5 lg:gap-y-8 mx-4 
                 ${sidebarOpen ? "lg:translate-x-[20%]" : ""}`}
       >
         {/* profile image and greeting */}
@@ -58,7 +58,7 @@ export default function About({ style, sidebarOpen }: props) {
               src="https://avatars.githubusercontent.com/u/166220458?s=96&v=4"
             />
           </div>
-          <div className="text-4xl md:text-6xl lg:text-8xl font-[1000] font-['Montserrat'] text-[var(--text-light)] dark:text-[var(--text-dark)] transition-colors duration-300 ease-in-out">
+          <div className="text-4xl md:text-6xl lg:text-8xl text-nowrap font-['Montserrat'] text-[var(--text-light)] dark:text-[var(--text-dark)] transition-colors duration-300 ease-in-out">
             Hi, I'm Roe!
           </div>
         </div>
@@ -67,10 +67,10 @@ export default function About({ style, sidebarOpen }: props) {
         <div className="flex flex-row items-center justify-center">
           <div className="h-full w-full flex flex-grow justify-center">
             <div
-              className="bg-[var(--card-color1l)] border border-gray-400 dark:border-[var(--card-block)] dark:bg-[var(--card-block)] min-w-[90%] lg:w-full min-h-[260px] md:min-h-[100px] lg:min-h-[295px] 
+              className="bg-[var(--card-color1l)] border border-gray-400 dark:border-[var(--card-block)] dark:bg-[var(--card-block)] min-w-[90%] lg:w-full min-h-[230px] md:min-h-[100px] lg:min-h-[255px] 
                              rounded-lg shadow-md transition-colors duration-300 ease-in-out flex flex-col"
             >
-              <Carousel setApi={setApi} className="h-full w-full p-3 lg:p-7">
+              <Carousel setApi={setApi} className="h-full w-full p-3 lg:p-5">
                 <CarouselContent>
                   {components.map((Component, index) => (
                     <CarouselItem key={index}>
@@ -84,7 +84,7 @@ export default function About({ style, sidebarOpen }: props) {
                   change={() => api && api?.scrollTo(current - 1)}
                   content={
                     <i
-                      className={`bx bx-chevron-left w-full h-full text-xl lg:text-4xl text-center transition-colors duration-300 ease-in-out
+                      className={`bx bx-chevron-left w-full h-full text-xl lg:text-3xl text-center transition-colors duration-300 ease-in-out
                       ${current == 0 ? "text-[var(--text-dhover)]" : "text-[var(--text-light)] dark:text-[var(--text-dark)]"}`}
                     />
                   }
@@ -95,7 +95,7 @@ export default function About({ style, sidebarOpen }: props) {
                   change={() => api && api?.scrollTo(current + 1)}
                   content={
                     <i
-                      className={`bx bx-chevron-right w-full h-full text-xl lg:text-4xl text-center transition-colors duration-300    ease-in-out
+                      className={`bx bx-chevron-right w-full h-full text-xl lg:text-3xl text-center transition-colors duration-300    ease-in-out
                                 ${current == components.length - 1 ? "text-[var(--text-dhover)]" : "text-[var(--text-light)] dark:text-[var(--text-dark)]"}`}
                     />
                   }
