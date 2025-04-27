@@ -1,5 +1,5 @@
 # 💻Web Portfolio
-Welcome to my personal portfolio! This website was reacted with Vite ReactTS. It was then deployed on Vercel's platform. This project is a way for me to practice with TypeScript and component-based paradigm.
+Welcome to my portfolio! This website was built with Vite ReactTS and then deployed on Vercel's platform. This project allows me to practice TypeScript and the component-based paradigm.
 
 ### 🔗 Vercel Link
 [Roe Dizon Vercel App](https://roedizon.vercel.app)
@@ -9,7 +9,12 @@ Welcome to my personal portfolio! This website was reacted with Vite ReactTS. It
 
 
 ## Local Build
-`Run using`  
+`1. install dependencies`  
 ```bash 
+npm install
+```
+
+`2. run locally`
+```bash
 npm run dev
 ```
